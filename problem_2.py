@@ -49,8 +49,14 @@ def test_function(test_case):
         print("Fail")
 
 
-test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 6])
-test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 1])
-test_function([[6, 7, 8, 1, 2, 3, 4], 8])
-test_function([[6, 7, 8, 1, 2, 3, 4], 1])
-test_function([[6, 7, 8, 1, 2, 3, 4], 10])
+test_1 = [6, 7, 8, 9, 10, 1, 2, 3, 4]
+print(rotated_array_search(test_1, 8))
+# 2
+
+test_2 = [6, 7, 8, 1, 2, 3, 4]
+print(rotated_array_search(test_2, 10))
+# -1
+
+test_3 = []
+print(rotated_array_search(test_3, 6))
+# -1

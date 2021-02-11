@@ -77,5 +77,18 @@ def f(prefix):
     else:
         print('')
 
-f("an")
 
+test_1 = MyTrie.find("1")
+print(test_1)
+# None
+
+test_2 = MyTrie.find("an")
+print('\n'.join(test_2.suffixes('', [])))
+# t
+# thology
+# tagonist
+# tonym
+
+test_3 = MyTrie.find("trigonometr")
+print('\n'.join(test_3.suffixes('', [])))
+# y

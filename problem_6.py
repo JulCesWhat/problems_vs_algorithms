@@ -1,3 +1,5 @@
+import random
+
 def get_min_max(ints):
     """
     Return a tuple(min, max) out of list of unsorted integers.
@@ -5,14 +7,13 @@ def get_min_max(ints):
     Args:
        ints(list): list of integers containing one or more integers
     """
-    print("array:  " + ','.join(map(str, ints)))
 
     if len(ints) == 2:
-        return (ints[0], ints[1])
+        return ints[0], ints[1]
     elif len(ints) == 1:
-        return (ints[0], ints[0])
+        return ints[0], ints[0]
     elif len(ints) < 1:
-        return (-1, -1)
+        return -1, -1
 
     min_val = None
     max_val = None
@@ -26,15 +27,24 @@ def get_min_max(ints):
             if max_val is not None and (min_val is None or max_val < min_val):
                 min_val = max_val
             max_val = num
-    print("max val:  " + str(max_val))
-    print("max val:  " + str(min_val))
-    return (min_val, max_val)
+    return min_val, max_val
 
 
-## Example Test Case of Ten Integers
-import random
+# Example Test Case of Ten Integers
 
 l = [i for i in range(0, 10)]  # a list containing 0 - 9
-random.shuffle(l)
 
-print ("Pass" if ((0, 9) == get_min_max(l)) else "Fail")
+random.shuffle(l)
+test_1 = get_min_max(l)
+print(test_1)
+# (0, 9)
+
+random.shuffle(l)
+test_1 = get_min_max([1])
+print(test_1)
+# (1, 1)
+
+random.shuffle(l)
+test_1 = get_min_max([])
+print(test_1)
+# (-1, -1)

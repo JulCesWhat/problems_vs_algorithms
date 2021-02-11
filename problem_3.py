@@ -64,5 +64,14 @@ def test_function(test_case):
         print("Fail")
 
 
-test_function([[1, 2, 3, 4, 5], [531, 42]])
-test_function([[4, 6, 2, 5, 9, 8], [964, 852]])
+test_1 = rearrange_digits([1, 2, 3, 4, 5])
+print(test_1)
+# [531, 42]
+
+test_2 = rearrange_digits([5])
+print(test_2)
+# [5, 0]
+
+test_3 = rearrange_digits([])
+print(test_3)
+# [0, 0]

@@ -7,7 +7,6 @@ class RouteTrie:
         self.root = RouteTrieNode('/', rootHandler)
         self.noHandler = noHandler
 
-
     def insert(self, sub_paths, handler):
         # Similar to our previous example you will want to recursively add nodes
         # Make sure you assign the handler to only the leaf (deepest) node of this path
@@ -25,7 +24,6 @@ class RouteTrie:
                 current_node.insert(path, new_node)
                 current_node = current_node.children[path]
             index += 1
-
 
     def find(self, sub_paths):
         # Starting at the root, navigate the Trie to find a match for this path
@@ -57,7 +55,6 @@ class RouteTrieNode:
             self.children[route] = new_node
 
 
-
 # The Router class will wrap the Trie and handle
 class Router:
     def __init__(self, root_handler, no_handler):
@@ -71,7 +68,6 @@ class Router:
         # as a list to the RouteTrie
         sub_paths = self.split_path(path)
         self.router.insert(sub_paths, handler)
-
 
     def lookup(self, path):
         # lookup path (by parts) and return the associated handler
@@ -98,9 +94,19 @@ class Router:
 router = Router("root handler", "not found handler")  # remove the 'not found handler' if you did not implement this
 router.add_handler("/home/about", "about handler")  # add a route
 
+
 # some lookups with the expected output
-print(router.lookup("/")) # should print 'root handler'
-print(router.lookup("/home")) # should print 'not found handler' or None if you did not implement one
-print(router.lookup("/home/about")) # should print 'about handler'
-print(router.lookup("/home/about/")) # should print 'about handler' or None if you did not handle trailing slashes
-print(router.lookup("/home/about/me")) # should print 'not found handler' or None if you did not implement one
+print(router.lookup("/"))
+# should print 'root handler'
+
+print(router.lookup("/home"))
+# should print 'not found handler'
+
+print(router.lookup("/home/about"))
+# should print 'about handler'
+
+print(router.lookup("/home/about/"))
+# should print 'about handler'
+
+print(router.lookup("/home/about/me"))
+# should print 'not found handler'
