@@ -79,7 +79,6 @@ class Router:
         sub_paths = self.split_path(path)
         return self.router.find(sub_paths)
 
-
     def split_path(self, path):
         # you need to split the path into parts for
         # both the add_handler and loopup functions,

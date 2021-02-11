@@ -9,6 +9,8 @@ def sqrt(number):
     Returns:
        int: Floored Square Root
     """
+    if number < 0:
+        return None
 
     x_num = number
     y_num = (x_num + 1) // 2
@@ -26,3 +28,9 @@ print(sqrt(0))
 
 print(sqrt(5))
 # 2
+
+print(sqrt(-1))
+# None
+
+print(sqrt(-100))
+# None

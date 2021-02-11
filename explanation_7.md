@@ -3,9 +3,17 @@
 I decided to use Trie Node structure to solve this problem because it was the best way to handle
 the input routes.
 
-* Worse `get` time case complexity: O(n)    when n is the number of different route paths
-* Worse `set` time case complexity: O(n)    when n is the number of different route paths
-* Space complexity: 0(n)        when n is the number of different route paths
+* Worse RouteTrie `insert` time case complexity: O(n)   n is the amount of the sub-paths 
+* Worse RouteTrie `find` time case complexity: O(n)    n is the size of the word being retrieved
+* Worse RouteTrieNode `insert` time case complexity: O(1)
+* Worse Router `add_handler` time case complexity: O(n)    n is the amount of the sub-paths 
+* Worse Router `lookup` time case complexity: O(n)   n is the amount of the sub-paths 
+  
+* Worse RouteTrie `insert` space complexity: O(1)    
+* Worse RouteTrie `find` space complexity: O(1)
+* Worse RouteTrieNode `insert` space complexity: O(1)
+* Worse Router `add_handler` space complexity: O(1)
+* Worse Router `lookup` space complexity: O(1)
     
     
 ## Required Tools

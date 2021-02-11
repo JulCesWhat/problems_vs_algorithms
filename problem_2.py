@@ -1,6 +1,6 @@
 
 
-def rotated_array_search(input_list, number):
+def rotated_array_search(input_list, num):
     """
     Find the index by searching in a rotated sorted array
 
@@ -9,7 +9,10 @@ def rotated_array_search(input_list, number):
     Returns:
        int: Index or -1
     """
-    return search(input_list, number, 0, len(input_list) - 1)
+    if input_list is None or len(input_list) is 0:
+        return []
+
+    return search(input_list, num, 0, len(input_list) - 1)
 
 
 def search(input_list, number, low, high):
@@ -60,3 +63,7 @@ print(rotated_array_search(test_2, 10))
 test_3 = []
 print(rotated_array_search(test_3, 6))
 # -1
+
+test_4 = None
+print(rotated_array_search(test_4, 6))
+# None

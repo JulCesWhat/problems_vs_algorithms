@@ -7,6 +7,9 @@ def sort_012(input_list):
     Args:
        input_list(list): List to be sorted
     """
+    if input_list is None:
+        return [];
+
     start_pos = 0
     end_pos = len(input_list) - 1
 
@@ -48,3 +51,7 @@ print(sort_012(test_2))
 test_3 = [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2]
 print(sort_012(test_3))
 # [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2]
+
+test_4 = None
+print(sort_012(test_4))
+# []
