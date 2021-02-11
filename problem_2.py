@@ -9,8 +9,28 @@ def rotated_array_search(input_list, number):
     Returns:
        int: Index or -1
     """
+    return search(input_list, number, 0, len(input_list) - 1)
 
-   pass
+
+def search(input_list, number, low, high):
+    mid = (low + high) // 2
+
+    if low > high:
+        return - 1
+
+    if input_list[mid] is number:
+        return mid
+
+    if input_list[low] <= input_list[mid]:
+        if input_list[low] <= number <= input_list[mid]:
+            return search(input_list, number, low, mid - 1)
+        else:
+            return search(input_list, number, mid + 1, high)
+    else:
+        if input_list[mid] <= number <= input_list[high]:
+            return search(input_list, number, mid + 1, high)
+        else:
+            return search(input_list, number, low, mid - 1)
 
 
 def linear_search(input_list, number):

@@ -7,7 +7,25 @@ def sort_012(input_list):
     Args:
        input_list(list): List to be sorted
     """
-    pass
+    start_pos = 0
+    end_pos = len(input_list) - 1
+
+    front_in = 0
+
+    while front_in <= end_pos:
+        if input_list[front_in] == 0:
+            input_list[front_in] = input_list[start_pos]
+            input_list[start_pos] = 0
+            start_pos += 1
+            front_in += 1
+        elif input_list[front_in] == 2:
+            input_list[front_in] = input_list[end_pos]
+            input_list[end_pos] = 2
+            end_pos -= 1
+        else:
+            front_in += 1
+
+    return input_list
 
 
 def test_function(test_case):
